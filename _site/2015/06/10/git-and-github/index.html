@@ -111,6 +111,66 @@
   </li>
 </ol>
 
+<h1 id="github">GitHub</h1>
+
+<p>Everything is done in pushing and pulling.</p>
+
+<h2 id="general-commitments-among-collaborators-to-avoid-conflicts">general commitments among collaborators to avoid conflicts</h2>
+
+<p>Always pull the moment you want to start working on something in order to make sure that you start with the most current version.
+Always promise to push at the end of the session! And, of course, commit and push constantly</p>
+
+<h2 id="push">push</h2>
+
+<p><code>git remote add origin https://github.com/tillgrallert/borderlands.git</code>
+<code>git push -u origin master</code></p>
+
+<ul>
+  <li><code>origin</code> is the variable that will hence stand for the full address</li>
+  <li><code>master</code> addresses the master branch</li>
+  <li><code>-u</code> is short for “upstream”</li>
+</ul>
+
+<h2 id="pull">pull</h2>
+
+<h2 id="clone">clone</h2>
+
+<p><code>$git clone https://github.com/...</code>
+- make sure to be in the right working directory</p>
+
+<h2 id="branches">branches</h2>
+
+<ul>
+  <li>if you work on a single branch, sequential edits will overwrite each other</li>
+  <li>so use branches for each <strong>contributor</strong>
+    <ul>
+      <li>none of the code has to be reviewed among contributors</li>
+    </ul>
+  </li>
+  <li>many projects use <strong>forking</strong>, which means, you are not technically a member of a project. You sign out code and then make a pull-request that includes a “code review”, i.e. an editorial decision</li>
+</ul>
+
+<ol>
+  <li>create a branch: checkout
+    <ul>
+      <li><code>$git checkout -b [new branche's name]</code></li>
+      <li><code>-b</code> creates a new branch</li>
+      <li><code>$git branch</code> will return all branches</li>
+    </ul>
+  </li>
+  <li>push a branch back to GitHub
+    <ul>
+      <li><code>$git push origin [name of the branch]</code></li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="merges">merges</h2>
+
+<h2 id="public--private-repos">public / private repos</h2>
+
+<p>Write them an email explaining that you use github in class etc. and you will get a small number of private repositories</p>
+
   </article>
 
 </div>

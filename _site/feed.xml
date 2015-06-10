@@ -6,8 +6,8 @@
 </description>
     <link>http://yourdomain.com/</link>
     <atom:link href="http://yourdomain.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 10 Jun 2015 10:36:22 -0700</pubDate>
-    <lastBuildDate>Wed, 10 Jun 2015 10:36:22 -0700</lastBuildDate>
+    <pubDate>Wed, 10 Jun 2015 11:37:06 -0700</pubDate>
+    <lastBuildDate>Wed, 10 Jun 2015 11:37:06 -0700</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -60,6 +60,66 @@
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
+
+&lt;h1 id=&quot;github&quot;&gt;GitHub&lt;/h1&gt;
+
+&lt;p&gt;Everything is done in pushing and pulling.&lt;/p&gt;
+
+&lt;h2 id=&quot;general-commitments-among-collaborators-to-avoid-conflicts&quot;&gt;general commitments among collaborators to avoid conflicts&lt;/h2&gt;
+
+&lt;p&gt;Always pull the moment you want to start working on something in order to make sure that you start with the most current version.
+Always promise to push at the end of the session! And, of course, commit and push constantly&lt;/p&gt;
+
+&lt;h2 id=&quot;push&quot;&gt;push&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;git remote add origin https://github.com/tillgrallert/borderlands.git&lt;/code&gt;
+&lt;code&gt;git push -u origin master&lt;/code&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;origin&lt;/code&gt; is the variable that will hence stand for the full address&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;master&lt;/code&gt; addresses the master branch&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;-u&lt;/code&gt; is short for “upstream”&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;pull&quot;&gt;pull&lt;/h2&gt;
+
+&lt;h2 id=&quot;clone&quot;&gt;clone&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;$git clone https://github.com/...&lt;/code&gt;
+- make sure to be in the right working directory&lt;/p&gt;
+
+&lt;h2 id=&quot;branches&quot;&gt;branches&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;if you work on a single branch, sequential edits will overwrite each other&lt;/li&gt;
+  &lt;li&gt;so use branches for each &lt;strong&gt;contributor&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;none of the code has to be reviewed among contributors&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;many projects use &lt;strong&gt;forking&lt;/strong&gt;, which means, you are not technically a member of a project. You sign out code and then make a pull-request that includes a “code review”, i.e. an editorial decision&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;create a branch: checkout
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code&gt;$git checkout -b [new branche&#39;s name]&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code&gt;-b&lt;/code&gt; creates a new branch&lt;/li&gt;
+      &lt;li&gt;&lt;code&gt;$git branch&lt;/code&gt; will return all branches&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;push a branch back to GitHub
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code&gt;$git push origin [name of the branch]&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;merges&quot;&gt;merges&lt;/h2&gt;
+
+&lt;h2 id=&quot;public--private-repos&quot;&gt;public / private repos&lt;/h2&gt;
+
+&lt;p&gt;Write them an email explaining that you use github in class etc. and you will get a small number of private repositories&lt;/p&gt;
 </description>
         <pubDate>Wed, 10 Jun 2015 03:24:34 -0700</pubDate>
         <link>http://yourdomain.com/2015/06/10/git-and-github/</link>
