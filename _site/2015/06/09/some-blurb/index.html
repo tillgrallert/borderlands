@@ -124,7 +124,18 @@
 <ul>
   <li>another syntax written inside double curly braces inside our html chunks</li>
   <li>it seems to be a procedural markup: “do something until you find a new command”</li>
+  <li><strong>Problem</strong>: escaping liquid syntax for documentation <strong>cannot</strong> be done in markdown etc., but with additional liquid:
+    <ul>
+      <li>solution 1:</li>
+    </ul>
+  </li>
 </ul>
+
+<p>{% liquidcode1 %} 
+ {% endliquidcode1 %}</p>
+
+<pre><code>+ **erroneous** "solution" 2: according to kramdown syntax,rows of more than 3 tildes `~~~` should generate a block of CDATA but it doesn't
+</code></pre>
 
 <h2 id="liquid-syntax">liquid syntax</h2>
 

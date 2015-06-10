@@ -40,6 +40,15 @@ I am currently playing around with jekyll, git and [github pages](https://www.gi
 
 - another syntax written inside double curly braces inside our html chunks
 - it seems to be a procedural markup: "do something until you find a new command"
+-  **Problem**: escaping liquid syntax for documentation **cannot** be done in markdown etc., but with additional liquid:
+    + solution 1:  
+
+{% raw %} {% liquidcode1 %} {% endraw %}
+{% raw %} {% endliquidcode1 %} {% endraw %}
+
+
+    + **erroneous** "solution" 2: according to kramdown syntax,rows of more than 3 tildes `~~~` should generate a block of CDATA but it doesn't
+
 
 ## liquid syntax
 

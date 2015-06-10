@@ -6,8 +6,8 @@
 </description>
     <link>http://yourdomain.com/borderlands/</link>
     <atom:link href="http://yourdomain.com/borderlands/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 10 Jun 2015 15:09:14 -0700</pubDate>
-    <lastBuildDate>Wed, 10 Jun 2015 15:09:14 -0700</lastBuildDate>
+    <pubDate>Wed, 10 Jun 2015 15:34:58 -0700</pubDate>
+    <lastBuildDate>Wed, 10 Jun 2015 15:34:58 -0700</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -187,7 +187,18 @@ Always promise to push at the end of the session! And, of course, commit and pus
 &lt;ul&gt;
   &lt;li&gt;another syntax written inside double curly braces inside our html chunks&lt;/li&gt;
   &lt;li&gt;it seems to be a procedural markup: “do something until you find a new command”&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Problem&lt;/strong&gt;: escaping liquid syntax for documentation &lt;strong&gt;cannot&lt;/strong&gt; be done in markdown etc., but with additional liquid:
+    &lt;ul&gt;
+      &lt;li&gt;solution 1:&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;p&gt;{% liquidcode1 %} 
+ {% endliquidcode1 %}&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;+ **erroneous** &quot;solution&quot; 2: according to kramdown syntax,rows of more than 3 tildes `~~~` should generate a block of CDATA but it doesn&#39;t
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h2 id=&quot;liquid-syntax&quot;&gt;liquid syntax&lt;/h2&gt;
 
