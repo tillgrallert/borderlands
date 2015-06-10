@@ -81,9 +81,8 @@
       <li>get them tattooed on our forearms</li>
     </ul>
   </li>
+  <li>git can be installed through the command line. <code>$sudo app-get install git</code></li>
 </ul>
-
-<p>$sudo app-get install git</p>
 
 <ol>
   <li><strong>initiate</strong> git on the highest level of your project!
@@ -95,10 +94,21 @@
   <li><strong>add</strong>: now, git needs to start tracking changes
     <ul>
       <li><code>$git add .</code></li>
+      <li>every new file, folder, etc. needs to be added, which can be done by the specific path or using the above command again</li>
     </ul>
   </li>
-  <li><strong>commit</strong>: every new file, folder, etc.</li>
-  <li>check status of git: <code>$git status</code></li>
+  <li><strong>commit</strong>: every new file, folder, etc.
+    <ul>
+      <li><code>$git commit -m "added something, made some changes, etc."</code></li>
+      <li>start with the message “initial commit”</li>
+    </ul>
+  </li>
+  <li><strong>add and commit</strong>: add and commit can be done at the some step: <code>$git commit -am "added something to a specific file"</code></li>
+  <li>check status of git: <code>$git status</code>
+    <ul>
+      <li>one can always start over: <strong>BUT NEVER ever DO so</strong> <code>rm -r .git</code></li>
+    </ul>
+  </li>
 </ol>
 
   </article>
