@@ -9,14 +9,14 @@
   <title>A first blurb to try and play with Jekyll</title>
   <meta name="description" content="I am currently playing around with jekyll, git and github pages.">
 
-  <!-- <link rel="stylesheet" href="/css/main.css"> -->
+  <!-- <link rel="stylesheet" href="/borderlands/css/main.css"> -->
   <!-- changed to account for github pages -->
-  <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://yourdomain.com/2015/06/09/some-blurb/">
-  <link rel="alternate" type="application/rss+xml" title="GLobalDH@DHSI-TestSite" href="http://yourdomain.com/feed.xml" />
+  <link rel="stylesheet" href="/borderlands/css/main.css">
+  <link rel="canonical" href="http://yourdomain.com/borderlands/2015/06/09/some-blurb/">
+  <link rel="alternate" type="application/rss+xml" title="GLobalDH@DHSI-TestSite" href="http://yourdomain.com/borderlands/feed.xml" />
 
  <!-- include our custom css -->
- <link rel="stylesheet" type="text/css" href="/css/borderlands.css">
+ <link rel="stylesheet" type="text/css" href="/borderlands/css/borderlands.css">
 </head>
 
 
@@ -26,7 +26,7 @@
 
   <div class="wrapper">
 
-    <a class="site-title" href="/">GLobalDH@DHSI-TestSite</a>
+    <a class="site-title" href="/borderlands/">GLobalDH@DHSI-TestSite</a>
 
     <nav class="site-nav">
       <a href="#" class="menu-icon">
@@ -40,7 +40,7 @@
       <div class="trigger">
         
           
-          <a class="page-link" href="/about/">About</a>
+          <a class="page-link" href="/borderlands/about/">About</a>
           
         
           
@@ -68,6 +68,114 @@
 
   <article class="post-content">
     <p>I am currently playing around with jekyll, git and <a href="https://www.github.com">github pages</a>.</p>
+
+<h1 id="jekyll-dynamic-static-websites">jekyll: dynamic static websites</h1>
+
+<ul>
+  <li>
+    <p>we need an up-to-date ruby installation, which might require all sorts of other stuff. Remember that ruby gems are always installed inside the user folder!</p>
+  </li>
+  <li>jekyll uses a special flavour of markdown</li>
+  <li><a href="http://jekyllrb.com/">Jekyll</a>. For Windows see: http://jekyllrb.com/docs/windows/</li>
+  <li>it needs ruby and rubygems, which one might need to install</li>
+  <li>
+    <p>jekyll can do both concatanated websites and single pages; can be combined etc.</p>
+  </li>
+  <li>there is static folder “_includes”
+    <ul>
+      <li>footer.html</li>
+      <li>head.html : containing all the metadata, i.e. &lt;head&gt;&lt;/head&gt; inside all our websitesc</li>
+      <li>header.htlm</li>
+    </ul>
+  </li>
+  <li>“_layouts”
+    <ul>
+      <li>default.html</li>
+      <li>page.html</li>
+      <li>post.html</li>
+    </ul>
+  </li>
+  <li>_config.yml: configures the entire website. It is a dictionary
+    <ul>
+      <li>specify markdown flavour;
+        <ul>
+          <li>markdown: kramdown</li>
+          <li>permalink: pretty</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="commands">commands</h2>
+
+<ul>
+  <li><code>$jekyll new</code>: new project</li>
+  <li><code>$jekyll build</code>: creates a folder “_site” using only html and css, which is what then should be pushed to your website
+    <ul>
+      <li><code>$jekyll build -w</code> or <code>$jekyll build --watch</code>: perpetually checks for changes to the source files and rebuilds the jekyll site in the background</li>
+    </ul>
+  </li>
+  <li><code>$jekyll serve</code>: starts constant rebuilding and a local server upon which the jekyll website is running</li>
+</ul>
+
+<h2 id="liquid-templating">liquid templating:</h2>
+
+<ul>
+  <li>another syntax written inside double curly braces inside our html chunks</li>
+  <li>it seems to be a procedural markup: “do something until you find a new command”</li>
+</ul>
+
+<h2 id="liquid-syntax">liquid syntax</h2>
+
+<ul>
+  <li>
+    <p>there is a great link to the liquid syntax on <a href="https://github.com/Shopify/liquid/wiki/Liquid-for-Designers">github</a></p>
+
+    <p>{% computing instruction %}
+   {{ get data }}
+   |  separates the data from a specific command: {{ post.date | date: “%b %-d, %Y” }}</p>
+  </li>
+</ul>
+
+<p>this can be commented out / escape by any standard markdown way of doing this</p>
+
+<ul>
+  <li>
+    <p>how to iterate in liquid</p>
+  </li>
+  <li>
+    <p>syntax:</p>
+
+    <p>{% for %}
+  {% endfor %}</p>
+  </li>
+  <li>
+    <p>example</p>
+
+    <p>{% assign i=1 %}
+  {% for project in site.data.projects limit:1 offset:i %}</p>
+    <p>Link <a href="{{ project.link }}">{{ project.link }}</a></p>
+    <p>{% endfor %}</p>
+  </li>
+</ul>
+
+<h1 id="yaml">Yaml</h1>
+
+<p>group similar entries re-using keys with arreys prefixed with a hyphen and a dash:</p>
+
+<ul>
+  <li>day: 1
+name:</li>
+  <li>day: 2
+name:</li>
+</ul>
+
+<h2 id="yaml-data-store-posts">yaml data-store: posts</h2>
+
+<p>date and title of the post in the file name!</p>
+
+<p>yyyy-MM-dd-title.markdown</p>
 
   </article>
 

@@ -45,22 +45,31 @@ I am currently playing around with jekyll, git and [github pages](https://www.gi
 
 - there is a great link to the liquid syntax on [github](https://github.com/Shopify/liquid/wiki/Liquid-for-Designers)
 
-`{% computing instruction %}`
-`{{ get data }}`
-`|` separates the data from a specific command:
-    + `{{ post.date | date: "%b %-d, %Y" }}`
+{% raw %}
+     {% computing instruction %}
+     {{ get data }}
+     |  separates the data from a specific command: {{ post.date | date: "%b %-d, %Y" }}
+{% endraw %}
 
 this can be commented out / escape by any standard markdown way of doing this
 
 - how to iterate in liquid
-    + `{% for %}`
-    + `{% endfor %}`
-    + example 
 
-    `{% assign i=1 %}`
-    `{% for project in site.data.projects limit:1 offset:i %}`
-    `<p>Link <a href="{{ project.link }}">{{ project.link }}</a></p>`
-    `{% endfor %}`
+- syntax: 
+
+{% raw %}
+    {% for %}
+    {% endfor %}
+{% endraw %}
+
+- example 
+
+{% raw %}
+    {% assign i=1 %}
+    {% for project in site.data.projects limit:1 offset:i %}
+    <p>Link <a href="{{ project.link }}">{{ project.link }}</a></p>
+    {% endfor %}
+{% endraw %}
 
 # Yaml
 

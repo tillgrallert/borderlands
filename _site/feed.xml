@@ -4,10 +4,10 @@
     <title>GLobalDH@DHSI-TestSite</title>
     <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
 </description>
-    <link>http://yourdomain.com/</link>
-    <atom:link href="http://yourdomain.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 10 Jun 2015 14:09:24 -0700</pubDate>
-    <lastBuildDate>Wed, 10 Jun 2015 14:09:24 -0700</lastBuildDate>
+    <link>http://yourdomain.com/borderlands/</link>
+    <atom:link href="http://yourdomain.com/borderlands/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Wed, 10 Jun 2015 15:09:14 -0700</pubDate>
+    <lastBuildDate>Wed, 10 Jun 2015 15:09:14 -0700</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -122,8 +122,8 @@ Always promise to push at the end of the session! And, of course, commit and pus
 &lt;p&gt;Write them an email explaining that you use github in class etc. and you will get a small number of private repositories&lt;/p&gt;
 </description>
         <pubDate>Wed, 10 Jun 2015 03:24:34 -0700</pubDate>
-        <link>http://yourdomain.com/2015/06/10/git-and-github/</link>
-        <guid isPermaLink="true">http://yourdomain.com/2015/06/10/git-and-github/</guid>
+        <link>http://yourdomain.com/borderlands/2015/06/10/git-and-github/</link>
+        <guid isPermaLink="true">http://yourdomain.com/borderlands/2015/06/10/git-and-github/</guid>
         
         
       </item>
@@ -131,10 +131,118 @@ Always promise to push at the end of the session! And, of course, commit and pus
       <item>
         <title>A first blurb to try and play with Jekyll</title>
         <description>&lt;p&gt;I am currently playing around with jekyll, git and &lt;a href=&quot;https://www.github.com&quot;&gt;github pages&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&quot;jekyll-dynamic-static-websites&quot;&gt;jekyll: dynamic static websites&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;we need an up-to-date ruby installation, which might require all sorts of other stuff. Remember that ruby gems are always installed inside the user folder!&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;jekyll uses a special flavour of markdown&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;. For Windows see: http://jekyllrb.com/docs/windows/&lt;/li&gt;
+  &lt;li&gt;it needs ruby and rubygems, which one might need to install&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;jekyll can do both concatanated websites and single pages; can be combined etc.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;there is static folder “_includes”
+    &lt;ul&gt;
+      &lt;li&gt;footer.html&lt;/li&gt;
+      &lt;li&gt;head.html : containing all the metadata, i.e. &amp;lt;head&amp;gt;&amp;lt;/head&amp;gt; inside all our websitesc&lt;/li&gt;
+      &lt;li&gt;header.htlm&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;“_layouts”
+    &lt;ul&gt;
+      &lt;li&gt;default.html&lt;/li&gt;
+      &lt;li&gt;page.html&lt;/li&gt;
+      &lt;li&gt;post.html&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;_config.yml: configures the entire website. It is a dictionary
+    &lt;ul&gt;
+      &lt;li&gt;specify markdown flavour;
+        &lt;ul&gt;
+          &lt;li&gt;markdown: kramdown&lt;/li&gt;
+          &lt;li&gt;permalink: pretty&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;commands&quot;&gt;commands&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;$jekyll new&lt;/code&gt;: new project&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;$jekyll build&lt;/code&gt;: creates a folder “_site” using only html and css, which is what then should be pushed to your website
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code&gt;$jekyll build -w&lt;/code&gt; or &lt;code&gt;$jekyll build --watch&lt;/code&gt;: perpetually checks for changes to the source files and rebuilds the jekyll site in the background&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;$jekyll serve&lt;/code&gt;: starts constant rebuilding and a local server upon which the jekyll website is running&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;liquid-templating&quot;&gt;liquid templating:&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;another syntax written inside double curly braces inside our html chunks&lt;/li&gt;
+  &lt;li&gt;it seems to be a procedural markup: “do something until you find a new command”&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;liquid-syntax&quot;&gt;liquid syntax&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;there is a great link to the liquid syntax on &lt;a href=&quot;https://github.com/Shopify/liquid/wiki/Liquid-for-Designers&quot;&gt;github&lt;/a&gt;&lt;/p&gt;
+
+    &lt;p&gt;{% computing instruction %}
+   {{ get data }}
+   |  separates the data from a specific command: {{ post.date | date: “%b %-d, %Y” }}&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;this can be commented out / escape by any standard markdown way of doing this&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;how to iterate in liquid&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;syntax:&lt;/p&gt;
+
+    &lt;p&gt;{% for %}
+  {% endfor %}&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;example&lt;/p&gt;
+
+    &lt;p&gt;{% assign i=1 %}
+  {% for project in site.data.projects limit:1 offset:i %}&lt;/p&gt;
+    &lt;p&gt;Link &lt;a href=&quot;{{ project.link }}&quot;&gt;{{ project.link }}&lt;/a&gt;&lt;/p&gt;
+    &lt;p&gt;{% endfor %}&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;yaml&quot;&gt;Yaml&lt;/h1&gt;
+
+&lt;p&gt;group similar entries re-using keys with arreys prefixed with a hyphen and a dash:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;day: 1
+name:&lt;/li&gt;
+  &lt;li&gt;day: 2
+name:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;yaml-data-store-posts&quot;&gt;yaml data-store: posts&lt;/h2&gt;
+
+&lt;p&gt;date and title of the post in the file name!&lt;/p&gt;
+
+&lt;p&gt;yyyy-MM-dd-title.markdown&lt;/p&gt;
 </description>
         <pubDate>Tue, 09 Jun 2015 09:45:46 -0700</pubDate>
-        <link>http://yourdomain.com/2015/06/09/some-blurb/</link>
-        <guid isPermaLink="true">http://yourdomain.com/2015/06/09/some-blurb/</guid>
+        <link>http://yourdomain.com/borderlands/2015/06/09/some-blurb/</link>
+        <guid isPermaLink="true">http://yourdomain.com/borderlands/2015/06/09/some-blurb/</guid>
         
         
       </item>
@@ -157,8 +265,8 @@ Always promise to push at the end of the session! And, of course, commit and pus
 
 </description>
         <pubDate>Tue, 09 Jun 2015 08:11:50 -0700</pubDate>
-        <link>http://yourdomain.com/jekyll/update/2015/06/09/welcome-to-jekyll/</link>
-        <guid isPermaLink="true">http://yourdomain.com/jekyll/update/2015/06/09/welcome-to-jekyll/</guid>
+        <link>http://yourdomain.com/borderlands/jekyll/update/2015/06/09/welcome-to-jekyll/</link>
+        <guid isPermaLink="true">http://yourdomain.com/borderlands/jekyll/update/2015/06/09/welcome-to-jekyll/</guid>
         
         
         <category>jekyll</category>
