@@ -2,6 +2,7 @@
 layout: page
 title: About
 permalink: /about/
+date: 2015-06-10 13:40:36
 ---
 
 This is a small test page for playing around with open source, plain text, markdown (etc.), pandoc, static websites etc. in the context of Alex Gil's course on Global DH during [DHSI 2015](https://www.dhsi.org)
