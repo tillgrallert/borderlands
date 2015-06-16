@@ -4,10 +4,10 @@
     <title>GLobalDH@DHSI-TestSite</title>
     <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
 </description>
-    <link>http://yourdomain.com/borderlands/</link>
-    <atom:link href="http://yourdomain.com/borderlands/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 10 Jun 2015 15:34:58 -0700</pubDate>
-    <lastBuildDate>Wed, 10 Jun 2015 15:34:58 -0700</lastBuildDate>
+    <link>http://yourdomain.com/</link>
+    <atom:link href="http://yourdomain.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 16 Jun 2015 17:23:59 +0300</pubDate>
+    <lastBuildDate>Tue, 16 Jun 2015 17:23:59 +0300</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -121,9 +121,9 @@ Always promise to push at the end of the session! And, of course, commit and pus
 
 &lt;p&gt;Write them an email explaining that you use github in class etc. and you will get a small number of private repositories&lt;/p&gt;
 </description>
-        <pubDate>Wed, 10 Jun 2015 03:24:34 -0700</pubDate>
-        <link>http://yourdomain.com/borderlands/2015/06/10/git-and-github/</link>
-        <guid isPermaLink="true">http://yourdomain.com/borderlands/2015/06/10/git-and-github/</guid>
+        <pubDate>Wed, 10 Jun 2015 13:24:34 +0300</pubDate>
+        <link>http://yourdomain.com/2015/06/10/git-and-github/</link>
+        <guid isPermaLink="true">http://yourdomain.com/2015/06/10/git-and-github/</guid>
         
         
       </item>
@@ -250,10 +250,44 @@ name:&lt;/li&gt;
 &lt;p&gt;date and title of the post in the file name!&lt;/p&gt;
 
 &lt;p&gt;yyyy-MM-dd-title.markdown&lt;/p&gt;
+
+&lt;h1 id=&quot;ruby&quot;&gt;ruby&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;ruby is installed on macs but might need updating
+    &lt;ul&gt;
+      &lt;li&gt;helpful tutorial for installing ruby-on-rails &lt;a href=&quot;https://railsapps.github.io/installrubyonrails-mac.html&quot;&gt;https://railsapps.github.io/installrubyonrails-mac.html&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;tutorial for updating ruby: &lt;a href=&quot;https://coderwall.com/p/4imsra/upgrading-ruby-to-2-1-0-and-above-in-mavericks&quot;&gt;https://coderwall.com/p/4imsra/upgrading-ruby-to-2-1-0-and-above-in-mavericks&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;many ruby gems need the XCode command line tools: &lt;code&gt;$ xcode-select --install&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;these tools include &lt;em&gt;git&lt;/em&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;install homebrew: &lt;code&gt;$ ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;this might require an admin user: &lt;code&gt;$ su [username]&lt;/code&gt; allows to switch to another user&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;install rvm (ruby version manager): &lt;code&gt;$ \curl -L https://get.rvm.io | bash -s stable --ruby&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;update ruby
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code&gt;$ rvm get stable --autolibs=enable&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code&gt;$ rvm install ruby&lt;/code&gt; or &lt;code&gt;$ rvm install 2.2.2 --autolibs=enable&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code&gt;$ rvm --default use ruby-2.2.2&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;check version of ruby gems: &lt;code&gt;$ gem -v&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;potentially update gems: &lt;code&gt;$ gem update --system&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 </description>
-        <pubDate>Tue, 09 Jun 2015 09:45:46 -0700</pubDate>
-        <link>http://yourdomain.com/borderlands/2015/06/09/some-blurb/</link>
-        <guid isPermaLink="true">http://yourdomain.com/borderlands/2015/06/09/some-blurb/</guid>
+        <pubDate>Tue, 09 Jun 2015 19:45:46 +0300</pubDate>
+        <link>http://yourdomain.com/2015/06/09/some-blurb/</link>
+        <guid isPermaLink="true">http://yourdomain.com/2015/06/09/some-blurb/</guid>
         
         
       </item>
@@ -275,9 +309,9 @@ name:&lt;/li&gt;
 &lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://github.com/jekyll/jekyll-help&quot;&gt;Jekyll’s dedicated Help repository&lt;/a&gt;.&lt;/p&gt;
 
 </description>
-        <pubDate>Tue, 09 Jun 2015 08:11:50 -0700</pubDate>
-        <link>http://yourdomain.com/borderlands/jekyll/update/2015/06/09/welcome-to-jekyll/</link>
-        <guid isPermaLink="true">http://yourdomain.com/borderlands/jekyll/update/2015/06/09/welcome-to-jekyll/</guid>
+        <pubDate>Tue, 09 Jun 2015 18:11:50 +0300</pubDate>
+        <link>http://yourdomain.com/jekyll/update/2015/06/09/welcome-to-jekyll/</link>
+        <guid isPermaLink="true">http://yourdomain.com/jekyll/update/2015/06/09/welcome-to-jekyll/</guid>
         
         
         <category>jekyll</category>

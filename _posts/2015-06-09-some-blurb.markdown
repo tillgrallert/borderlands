@@ -94,3 +94,20 @@ group similar entries re-using keys with arreys prefixed with a hyphen and a das
 date and title of the post in the file name!
 
 yyyy-MM-dd-title.markdown
+
+# ruby
+
+- ruby is installed on macs but might need updating
+    + helpful tutorial for installing ruby-on-rails [https://railsapps.github.io/installrubyonrails-mac.html](https://railsapps.github.io/installrubyonrails-mac.html)
+    + tutorial for updating ruby: [https://coderwall.com/p/4imsra/upgrading-ruby-to-2-1-0-and-above-in-mavericks](https://coderwall.com/p/4imsra/upgrading-ruby-to-2-1-0-and-above-in-mavericks)
+- many ruby gems need the XCode command line tools: `$ xcode-select --install`
+    + these tools include *git*
+- install homebrew: `$ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)`
+    + this might require an admin user: `$ su [username]` allows to switch to another user
+- install rvm (ruby version manager): `$ \curl -L https://get.rvm.io | bash -s stable --ruby`
+- update ruby
+    + `$ rvm get stable --autolibs=enable`
+    + `$ rvm install ruby` or `$ rvm install 2.2.2 --autolibs=enable`
+    + `$ rvm --default use ruby-2.2.2`
+- check version of ruby gems: `$ gem -v`
+    + potentially update gems: `$ gem update --system`

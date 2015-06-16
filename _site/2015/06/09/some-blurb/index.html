@@ -1,7 +1,16 @@
 <!DOCTYPE html>
 <html>
 
-  <head>
+      <!-- fixing the relative path issue with jekyll -->
+      <!-- This bit of liquid code is needed to fix the problem with relative paths in jekyll without running a jekyll server -->
+<!-- it can now be called through an include: baseUrls.html -->
+
+
+
+
+
+
+<head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,14 +18,22 @@
   <title>A first blurb to try and play with Jekyll</title>
   <meta name="description" content="I am currently playing around with jekyll, git and github pages.">
 
-  <!-- <link rel="stylesheet" href="/borderlands/css/main.css"> -->
+  <!-- css for non-github pages -->
+  <link rel="stylesheet" href="css/main.css">
+   <!-- fixed relative links -->
+ <link rel="stylesheet" type="text/css" href="../../../../../css/main.css">
   <!-- changed to account for github pages -->
-  <link rel="stylesheet" href="/borderlands/css/main.css">
-  <link rel="canonical" href="http://yourdomain.com/borderlands/2015/06/09/some-blurb/">
-  <link rel="alternate" type="application/rss+xml" title="GLobalDH@DHSI-TestSite" href="http://yourdomain.com/borderlands/feed.xml" />
+  <!-- <link rel="stylesheet" href="/css/main.css"> -->
+  <link rel="canonical" href="http://yourdomain.com/2015/06/09/some-blurb/">
+  <link rel="alternate" type="application/rss+xml" title="GLobalDH@DHSI-TestSite" href="http://yourdomain.com/feed.xml" />
 
- <!-- include our custom css -->
- <link rel="stylesheet" type="text/css" href="/borderlands/css/borderlands.css">
+ <!-- include our custom css for github pages -->
+ <!-- <link rel="stylesheet" type="text/css" href="/css/borderlands.css"> -->
+ <!-- include our custom css for non-github pages -->
+ <link rel="stylesheet" type="text/css" href="css/borderlands.css"/>
+
+ <!-- fixed relative links -->
+ <link rel="stylesheet" type="text/css" href="../../../../../css/borderlands.css">
 </head>
 
 
@@ -26,7 +43,7 @@
 
   <div class="wrapper">
 
-    <a class="site-title" href="/borderlands/">GLobalDH@DHSI-TestSite</a>
+    <a class="site-title" href="/">GLobalDH@DHSI-TestSite</a>
 
     <nav class="site-nav">
       <a href="#" class="menu-icon">
@@ -40,7 +57,7 @@
       <div class="trigger">
         
           
-          <a class="page-link" href="/borderlands/about/">About</a>
+          <a class="page-link" href="/about/">About</a>
           
         
           
@@ -187,6 +204,40 @@ name:</li>
 <p>date and title of the post in the file name!</p>
 
 <p>yyyy-MM-dd-title.markdown</p>
+
+<h1 id="ruby">ruby</h1>
+
+<ul>
+  <li>ruby is installed on macs but might need updating
+    <ul>
+      <li>helpful tutorial for installing ruby-on-rails <a href="https://railsapps.github.io/installrubyonrails-mac.html">https://railsapps.github.io/installrubyonrails-mac.html</a></li>
+      <li>tutorial for updating ruby: <a href="https://coderwall.com/p/4imsra/upgrading-ruby-to-2-1-0-and-above-in-mavericks">https://coderwall.com/p/4imsra/upgrading-ruby-to-2-1-0-and-above-in-mavericks</a></li>
+    </ul>
+  </li>
+  <li>many ruby gems need the XCode command line tools: <code>$ xcode-select --install</code>
+    <ul>
+      <li>these tools include <em>git</em></li>
+    </ul>
+  </li>
+  <li>install homebrew: <code>$ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</code>
+    <ul>
+      <li>this might require an admin user: <code>$ su [username]</code> allows to switch to another user</li>
+    </ul>
+  </li>
+  <li>install rvm (ruby version manager): <code>$ \curl -L https://get.rvm.io | bash -s stable --ruby</code></li>
+  <li>update ruby
+    <ul>
+      <li><code>$ rvm get stable --autolibs=enable</code></li>
+      <li><code>$ rvm install ruby</code> or <code>$ rvm install 2.2.2 --autolibs=enable</code></li>
+      <li><code>$ rvm --default use ruby-2.2.2</code></li>
+    </ul>
+  </li>
+  <li>check version of ruby gems: <code>$ gem -v</code>
+    <ul>
+      <li>potentially update gems: <code>$ gem update --system</code></li>
+    </ul>
+  </li>
+</ul>
 
   </article>
 
