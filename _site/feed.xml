@@ -6,8 +6,8 @@
 </description>
     <link>http://yourdomain.com/</link>
     <atom:link href="http://yourdomain.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 10 Jun 2015 11:37:06 -0700</pubDate>
-    <lastBuildDate>Wed, 10 Jun 2015 11:37:06 -0700</lastBuildDate>
+    <pubDate>Tue, 16 Jun 2015 17:23:59 +0300</pubDate>
+    <lastBuildDate>Tue, 16 Jun 2015 17:23:59 +0300</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -121,7 +121,7 @@ Always promise to push at the end of the session! And, of course, commit and pus
 
 &lt;p&gt;Write them an email explaining that you use github in class etc. and you will get a small number of private repositories&lt;/p&gt;
 </description>
-        <pubDate>Wed, 10 Jun 2015 03:24:34 -0700</pubDate>
+        <pubDate>Wed, 10 Jun 2015 13:24:34 +0300</pubDate>
         <link>http://yourdomain.com/2015/06/10/git-and-github/</link>
         <guid isPermaLink="true">http://yourdomain.com/2015/06/10/git-and-github/</guid>
         
@@ -131,8 +131,161 @@ Always promise to push at the end of the session! And, of course, commit and pus
       <item>
         <title>A first blurb to try and play with Jekyll</title>
         <description>&lt;p&gt;I am currently playing around with jekyll, git and &lt;a href=&quot;https://www.github.com&quot;&gt;github pages&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&quot;jekyll-dynamic-static-websites&quot;&gt;jekyll: dynamic static websites&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;we need an up-to-date ruby installation, which might require all sorts of other stuff. Remember that ruby gems are always installed inside the user folder!&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;jekyll uses a special flavour of markdown&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;. For Windows see: http://jekyllrb.com/docs/windows/&lt;/li&gt;
+  &lt;li&gt;it needs ruby and rubygems, which one might need to install&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;jekyll can do both concatanated websites and single pages; can be combined etc.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;there is static folder “_includes”
+    &lt;ul&gt;
+      &lt;li&gt;footer.html&lt;/li&gt;
+      &lt;li&gt;head.html : containing all the metadata, i.e. &amp;lt;head&amp;gt;&amp;lt;/head&amp;gt; inside all our websitesc&lt;/li&gt;
+      &lt;li&gt;header.htlm&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;“_layouts”
+    &lt;ul&gt;
+      &lt;li&gt;default.html&lt;/li&gt;
+      &lt;li&gt;page.html&lt;/li&gt;
+      &lt;li&gt;post.html&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;_config.yml: configures the entire website. It is a dictionary
+    &lt;ul&gt;
+      &lt;li&gt;specify markdown flavour;
+        &lt;ul&gt;
+          &lt;li&gt;markdown: kramdown&lt;/li&gt;
+          &lt;li&gt;permalink: pretty&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;commands&quot;&gt;commands&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;$jekyll new&lt;/code&gt;: new project&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;$jekyll build&lt;/code&gt;: creates a folder “_site” using only html and css, which is what then should be pushed to your website
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code&gt;$jekyll build -w&lt;/code&gt; or &lt;code&gt;$jekyll build --watch&lt;/code&gt;: perpetually checks for changes to the source files and rebuilds the jekyll site in the background&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;$jekyll serve&lt;/code&gt;: starts constant rebuilding and a local server upon which the jekyll website is running&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;liquid-templating&quot;&gt;liquid templating:&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;another syntax written inside double curly braces inside our html chunks&lt;/li&gt;
+  &lt;li&gt;it seems to be a procedural markup: “do something until you find a new command”&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Problem&lt;/strong&gt;: escaping liquid syntax for documentation &lt;strong&gt;cannot&lt;/strong&gt; be done in markdown etc., but with additional liquid:
+    &lt;ul&gt;
+      &lt;li&gt;solution 1:&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;{% liquidcode1 %} 
+ {% endliquidcode1 %}&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;+ **erroneous** &quot;solution&quot; 2: according to kramdown syntax,rows of more than 3 tildes `~~~` should generate a block of CDATA but it doesn&#39;t
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;liquid-syntax&quot;&gt;liquid syntax&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;there is a great link to the liquid syntax on &lt;a href=&quot;https://github.com/Shopify/liquid/wiki/Liquid-for-Designers&quot;&gt;github&lt;/a&gt;&lt;/p&gt;
+
+    &lt;p&gt;{% computing instruction %}
+   {{ get data }}
+   |  separates the data from a specific command: {{ post.date | date: “%b %-d, %Y” }}&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;this can be commented out / escape by any standard markdown way of doing this&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;how to iterate in liquid&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;syntax:&lt;/p&gt;
+
+    &lt;p&gt;{% for %}
+  {% endfor %}&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;example&lt;/p&gt;
+
+    &lt;p&gt;{% assign i=1 %}
+  {% for project in site.data.projects limit:1 offset:i %}&lt;/p&gt;
+    &lt;p&gt;Link &lt;a href=&quot;{{ project.link }}&quot;&gt;{{ project.link }}&lt;/a&gt;&lt;/p&gt;
+    &lt;p&gt;{% endfor %}&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;yaml&quot;&gt;Yaml&lt;/h1&gt;
+
+&lt;p&gt;group similar entries re-using keys with arreys prefixed with a hyphen and a dash:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;day: 1
+name:&lt;/li&gt;
+  &lt;li&gt;day: 2
+name:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;yaml-data-store-posts&quot;&gt;yaml data-store: posts&lt;/h2&gt;
+
+&lt;p&gt;date and title of the post in the file name!&lt;/p&gt;
+
+&lt;p&gt;yyyy-MM-dd-title.markdown&lt;/p&gt;
+
+&lt;h1 id=&quot;ruby&quot;&gt;ruby&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;ruby is installed on macs but might need updating
+    &lt;ul&gt;
+      &lt;li&gt;helpful tutorial for installing ruby-on-rails &lt;a href=&quot;https://railsapps.github.io/installrubyonrails-mac.html&quot;&gt;https://railsapps.github.io/installrubyonrails-mac.html&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;tutorial for updating ruby: &lt;a href=&quot;https://coderwall.com/p/4imsra/upgrading-ruby-to-2-1-0-and-above-in-mavericks&quot;&gt;https://coderwall.com/p/4imsra/upgrading-ruby-to-2-1-0-and-above-in-mavericks&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;many ruby gems need the XCode command line tools: &lt;code&gt;$ xcode-select --install&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;these tools include &lt;em&gt;git&lt;/em&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;install homebrew: &lt;code&gt;$ ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;this might require an admin user: &lt;code&gt;$ su [username]&lt;/code&gt; allows to switch to another user&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;install rvm (ruby version manager): &lt;code&gt;$ \curl -L https://get.rvm.io | bash -s stable --ruby&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;update ruby
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code&gt;$ rvm get stable --autolibs=enable&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code&gt;$ rvm install ruby&lt;/code&gt; or &lt;code&gt;$ rvm install 2.2.2 --autolibs=enable&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code&gt;$ rvm --default use ruby-2.2.2&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;check version of ruby gems: &lt;code&gt;$ gem -v&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;potentially update gems: &lt;code&gt;$ gem update --system&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 </description>
-        <pubDate>Tue, 09 Jun 2015 09:45:46 -0700</pubDate>
+        <pubDate>Tue, 09 Jun 2015 19:45:46 +0300</pubDate>
         <link>http://yourdomain.com/2015/06/09/some-blurb/</link>
         <guid isPermaLink="true">http://yourdomain.com/2015/06/09/some-blurb/</guid>
         
@@ -156,7 +309,7 @@ Always promise to push at the end of the session! And, of course, commit and pus
 &lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://github.com/jekyll/jekyll-help&quot;&gt;Jekyll’s dedicated Help repository&lt;/a&gt;.&lt;/p&gt;
 
 </description>
-        <pubDate>Tue, 09 Jun 2015 08:11:50 -0700</pubDate>
+        <pubDate>Tue, 09 Jun 2015 18:11:50 +0300</pubDate>
         <link>http://yourdomain.com/jekyll/update/2015/06/09/welcome-to-jekyll/</link>
         <guid isPermaLink="true">http://yourdomain.com/jekyll/update/2015/06/09/welcome-to-jekyll/</guid>
         

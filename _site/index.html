@@ -1,7 +1,16 @@
 <!DOCTYPE html>
 <html>
 
-  <head>
+      <!-- fixing the relative path issue with jekyll -->
+      <!-- This bit of liquid code is needed to fix the problem with relative paths in jekyll without running a jekyll server -->
+<!-- it can now be called through an include: baseUrls.html -->
+
+
+
+
+
+
+<head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,9 +19,22 @@
   <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
 ">
 
-  <link rel="stylesheet" href="/css/main.css">
+  <!-- css for non-github pages -->
+  <link rel="stylesheet" href="css/main.css">
+   <!-- fixed relative links -->
+ <link rel="stylesheet" type="text/css" href="./css/main.css">
+  <!-- changed to account for github pages -->
+  <!-- <link rel="stylesheet" href="/css/main.css"> -->
   <link rel="canonical" href="http://yourdomain.com/">
   <link rel="alternate" type="application/rss+xml" title="GLobalDH@DHSI-TestSite" href="http://yourdomain.com/feed.xml" />
+
+ <!-- include our custom css for github pages -->
+ <!-- <link rel="stylesheet" type="text/css" href="/css/borderlands.css"> -->
+ <!-- include our custom css for non-github pages -->
+ <link rel="stylesheet" type="text/css" href="css/borderlands.css"/>
+
+ <!-- fixed relative links -->
+ <link rel="stylesheet" type="text/css" href="./css/borderlands.css">
 </head>
 
 
@@ -61,33 +83,66 @@
 
   <ul class="post-list">
     
+        <!-- fixing the relative path issue with jekyll -->
+      <!-- This bit of liquid code is needed to fix the problem with relative paths in jekyll without running a jekyll server -->
+<!-- it can now be called through an include: baseUrls.html -->
+
+
+
+
+
       <li>
         <span class="post-meta">Jun 10, 2015</span>
 
         <h2>
-          <a class="post-link" href="/2015/06/10/git-and-github/">Git and GitHub</a>
+          <!-- original links -->
+          <!-- <a class="post-link" href="/2015/06/10/git-and-github/">Git and GitHub</a> -->
+          <!-- fixed relative urls -->
+          <a href="./2015/06/10/git-and-github/">Git and GitHub</a>
         </h2>
       </li>
     
+        <!-- fixing the relative path issue with jekyll -->
+      <!-- This bit of liquid code is needed to fix the problem with relative paths in jekyll without running a jekyll server -->
+<!-- it can now be called through an include: baseUrls.html -->
+
+
+
+
+
       <li>
         <span class="post-meta">Jun 9, 2015</span>
 
         <h2>
-          <a class="post-link" href="/2015/06/09/some-blurb/">A first blurb to try and play with Jekyll</a>
+          <!-- original links -->
+          <!-- <a class="post-link" href="/2015/06/09/some-blurb/">A first blurb to try and play with Jekyll</a> -->
+          <!-- fixed relative urls -->
+          <a href="./2015/06/09/some-blurb/">A first blurb to try and play with Jekyll</a>
         </h2>
       </li>
     
+        <!-- fixing the relative path issue with jekyll -->
+      <!-- This bit of liquid code is needed to fix the problem with relative paths in jekyll without running a jekyll server -->
+<!-- it can now be called through an include: baseUrls.html -->
+
+
+
+
+
       <li>
         <span class="post-meta">Jun 9, 2015</span>
 
         <h2>
-          <a class="post-link" href="/jekyll/update/2015/06/09/welcome-to-jekyll/">Welcome to Jekyll!</a>
+          <!-- original links -->
+          <!-- <a class="post-link" href="/jekyll/update/2015/06/09/welcome-to-jekyll/">Welcome to Jekyll!</a> -->
+          <!-- fixed relative urls -->
+          <a href="./jekyll/update/2015/06/09/welcome-to-jekyll/">Welcome to Jekyll!</a>
         </h2>
       </li>
     
   </ul>
 
-  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
+  <p class="rss-subscribe">subscribe <!--<a href="/feed.xml">--> <a href="./feed.xml">via RSS</a></p>
 
 </div>
 

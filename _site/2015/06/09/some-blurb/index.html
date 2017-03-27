@@ -1,7 +1,16 @@
 <!DOCTYPE html>
 <html>
 
-  <head>
+      <!-- fixing the relative path issue with jekyll -->
+      <!-- This bit of liquid code is needed to fix the problem with relative paths in jekyll without running a jekyll server -->
+<!-- it can now be called through an include: baseUrls.html -->
+
+
+
+
+
+
+<head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,9 +18,22 @@
   <title>A first blurb to try and play with Jekyll</title>
   <meta name="description" content="I am currently playing around with jekyll, git and github pages.">
 
-  <link rel="stylesheet" href="/css/main.css">
+  <!-- css for non-github pages -->
+  <link rel="stylesheet" href="css/main.css">
+   <!-- fixed relative links -->
+ <link rel="stylesheet" type="text/css" href="../../../../../css/main.css">
+  <!-- changed to account for github pages -->
+  <!-- <link rel="stylesheet" href="/css/main.css"> -->
   <link rel="canonical" href="http://yourdomain.com/2015/06/09/some-blurb/">
   <link rel="alternate" type="application/rss+xml" title="GLobalDH@DHSI-TestSite" href="http://yourdomain.com/feed.xml" />
+
+ <!-- include our custom css for github pages -->
+ <!-- <link rel="stylesheet" type="text/css" href="/css/borderlands.css"> -->
+ <!-- include our custom css for non-github pages -->
+ <link rel="stylesheet" type="text/css" href="css/borderlands.css"/>
+
+ <!-- fixed relative links -->
+ <link rel="stylesheet" type="text/css" href="../../../../../css/borderlands.css">
 </head>
 
 
@@ -63,6 +85,159 @@
 
   <article class="post-content">
     <p>I am currently playing around with jekyll, git and <a href="https://www.github.com">github pages</a>.</p>
+
+<h1 id="jekyll-dynamic-static-websites">jekyll: dynamic static websites</h1>
+
+<ul>
+  <li>
+    <p>we need an up-to-date ruby installation, which might require all sorts of other stuff. Remember that ruby gems are always installed inside the user folder!</p>
+  </li>
+  <li>jekyll uses a special flavour of markdown</li>
+  <li><a href="http://jekyllrb.com/">Jekyll</a>. For Windows see: http://jekyllrb.com/docs/windows/</li>
+  <li>it needs ruby and rubygems, which one might need to install</li>
+  <li>
+    <p>jekyll can do both concatanated websites and single pages; can be combined etc.</p>
+  </li>
+  <li>there is static folder “_includes”
+    <ul>
+      <li>footer.html</li>
+      <li>head.html : containing all the metadata, i.e. &lt;head&gt;&lt;/head&gt; inside all our websitesc</li>
+      <li>header.htlm</li>
+    </ul>
+  </li>
+  <li>“_layouts”
+    <ul>
+      <li>default.html</li>
+      <li>page.html</li>
+      <li>post.html</li>
+    </ul>
+  </li>
+  <li>_config.yml: configures the entire website. It is a dictionary
+    <ul>
+      <li>specify markdown flavour;
+        <ul>
+          <li>markdown: kramdown</li>
+          <li>permalink: pretty</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="commands">commands</h2>
+
+<ul>
+  <li><code>$jekyll new</code>: new project</li>
+  <li><code>$jekyll build</code>: creates a folder “_site” using only html and css, which is what then should be pushed to your website
+    <ul>
+      <li><code>$jekyll build -w</code> or <code>$jekyll build --watch</code>: perpetually checks for changes to the source files and rebuilds the jekyll site in the background</li>
+    </ul>
+  </li>
+  <li><code>$jekyll serve</code>: starts constant rebuilding and a local server upon which the jekyll website is running</li>
+</ul>
+
+<h2 id="liquid-templating">liquid templating:</h2>
+
+<ul>
+  <li>another syntax written inside double curly braces inside our html chunks</li>
+  <li>it seems to be a procedural markup: “do something until you find a new command”</li>
+  <li><strong>Problem</strong>: escaping liquid syntax for documentation <strong>cannot</strong> be done in markdown etc., but with additional liquid:
+    <ul>
+      <li>solution 1:</li>
+    </ul>
+  </li>
+</ul>
+
+<p>{% liquidcode1 %} 
+ {% endliquidcode1 %}</p>
+
+<pre><code>+ **erroneous** "solution" 2: according to kramdown syntax,rows of more than 3 tildes `~~~` should generate a block of CDATA but it doesn't
+</code></pre>
+
+<h2 id="liquid-syntax">liquid syntax</h2>
+
+<ul>
+  <li>
+    <p>there is a great link to the liquid syntax on <a href="https://github.com/Shopify/liquid/wiki/Liquid-for-Designers">github</a></p>
+
+    <p>{% computing instruction %}
+   {{ get data }}
+   |  separates the data from a specific command: {{ post.date | date: “%b %-d, %Y” }}</p>
+  </li>
+</ul>
+
+<p>this can be commented out / escape by any standard markdown way of doing this</p>
+
+<ul>
+  <li>
+    <p>how to iterate in liquid</p>
+  </li>
+  <li>
+    <p>syntax:</p>
+
+    <p>{% for %}
+  {% endfor %}</p>
+  </li>
+  <li>
+    <p>example</p>
+
+    <p>{% assign i=1 %}
+  {% for project in site.data.projects limit:1 offset:i %}</p>
+    <p>Link <a href="{{ project.link }}">{{ project.link }}</a></p>
+    <p>{% endfor %}</p>
+  </li>
+</ul>
+
+<h1 id="yaml">Yaml</h1>
+
+<p>group similar entries re-using keys with arreys prefixed with a hyphen and a dash:</p>
+
+<ul>
+  <li>day: 1
+name:</li>
+  <li>day: 2
+name:</li>
+</ul>
+
+<h2 id="yaml-data-store-posts">yaml data-store: posts</h2>
+
+<p>date and title of the post in the file name!</p>
+
+<p>yyyy-MM-dd-title.markdown</p>
+
+<h1 id="ruby">ruby</h1>
+
+<ul>
+  <li>ruby is installed on macs but might need updating
+    <ul>
+      <li>helpful tutorial for installing ruby-on-rails <a href="https://railsapps.github.io/installrubyonrails-mac.html">https://railsapps.github.io/installrubyonrails-mac.html</a></li>
+      <li>tutorial for updating ruby: <a href="https://coderwall.com/p/4imsra/upgrading-ruby-to-2-1-0-and-above-in-mavericks">https://coderwall.com/p/4imsra/upgrading-ruby-to-2-1-0-and-above-in-mavericks</a></li>
+    </ul>
+  </li>
+  <li>many ruby gems need the XCode command line tools: <code>$ xcode-select --install</code>
+    <ul>
+      <li>these tools include <em>git</em></li>
+    </ul>
+  </li>
+  <li>install homebrew: <code>$ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</code>
+    <ul>
+      <li>this might require an admin user: <code>$ su [username]</code> allows to switch to another user</li>
+    </ul>
+  </li>
+  <li>install rvm (ruby version manager): <code>$ \curl -L https://get.rvm.io | bash -s stable --ruby</code></li>
+  <li>update ruby
+    <ul>
+      <li><code>$ rvm get stable --autolibs=enable</code></li>
+      <li><code>$ rvm install ruby</code> or <code>$ rvm install 2.2.2 --autolibs=enable</code></li>
+      <li><code>$ rvm --default use ruby-2.2.2</code></li>
+    </ul>
+  </li>
+  <li>check version of ruby gems: <code>$ gem -v</code>
+    <ul>
+      <li>potentially update gems: <code>$ gem update --system</code></li>
+    </ul>
+  </li>
+</ul>
 
   </article>
 
