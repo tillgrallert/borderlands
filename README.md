@@ -1,78 +1,22 @@
-# Jekyll-Bootstrap
+A Github Pages template for academic websites. This was forked (then detached) by [Stuart Geiger](https://github.com/staeiou) from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/), which is © 2016 Michael Rose and released under the MIT License. See LICENSE.md.
 
-The quickest way to start and publish your Jekyll powered blog. 100% compatible with GitHub pages
+I think I've got things running smoothly and fixed some major bugs, but feel free to file issues or make pull requests if you want to improve the generic template / theme.
 
-## Usage
+# Instructions
 
-For all usage and documentation please see: <http://jekyllbootstrap.com>
+1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
+1. Fork [this repository](https://github.com/academicpages/academicpages.github.io) by clicking the "fork" button in the top right. 
+1. Go to the repository's settings (rightmost item in the tabs that start with "Code", should be below "Unwatch"). Rename the repository "[your GitHub username].github.io", which will also be your website's URL.
+1. Set site-wide configuration and create content & metadata (see below -- also see [this set of diffs](http://archive.is/3TPas) showing what files were changed to set up [an example site](https://getorg-testacct.github.io) for a user with the username "getorg-testacct")
+1. Upload any files (like PDFs, .zip files, etc.) to the files/ directory. They will appear at https://[your GitHub username].github.io/files/example.pdf.  
+1. Check status by going to the repository settings, in the "GitHub pages" section
 
-## Version
+See more info at https://academicpages.github.io/
 
-0.3.0 - stable and versioned using [semantic versioning](http://semver.org/).
+# Bugs that have been fixed
 
-**NOTE:** 0.3.0 introduces a new theme which is not backwards compatible in the sense it won't _look_ like the old version.
-However, the actual API has not changed at all.
-You might want to run 0.3.0 in a branch to make sure you are ok with the theme design changes.
+There is one logistical issue with a ready-to-fork template theme like academic pages that makes it a little tricky to get bug fixes and updates to the core theme. If you fork this repository, customize it, then pull again, you'll probably get merge conflicts. If you want to save your various .yml configuration files and markdown files, you can delete the repository and fork it again. Or you can manually patch. 
 
-## Milestones
+To support this, here is a manually-curated list of bugs that have been fixed since this project was released. If you have a bug, you can go through and manually update. (If you have a better idea about how to support this, please let me know!)
 
-[0.4.0](https://github.com/plusjade/jekyll-bootstrap/milestones/v%200.4.0) - next release [ETA 03/29/2015]
-
-### GOALS
-
-* No open PRs against master branch.
-* Squash some bugs.
-* Add some new features (low-hanging fruit).
-* Establish social media presence.
-
-
-### Bugs
-
-|Bug |Description
-|------|---------------
-|[#86](https://github.com/plusjade/jekyll-bootstrap/issues/86)  |&#x2611; Facebook Comments
-|[#113](https://github.com/plusjade/jekyll-bootstrap/issues/113)|&#x2611; ASSET_PATH w/ page & post
-|[#144](https://github.com/plusjade/jekyll-bootstrap/issues/144)|&#x2610; BASE_PATH w/ FQDN
-|[#227](https://github.com/plusjade/jekyll-bootstrap/issues/227)|&#x2611; Redundant JB/setup
-
-### Features
-
-|Bug |Description
-|------|---------------
-|[#98](https://github.com/plusjade/jekyll-bootstrap/issues/98)  |&#x2611; GIST Integration
-|[#244](https://github.com/plusjade/jekyll-bootstrap/issues/244)|&#x2611; JB/file_exists Helper
-|[#42](https://github.com/plusjade/jekyll-bootstrap/issues/42)  |&#x2611; Sort collections of Pages / Posts
-|[#84](https://github.com/plusjade/jekyll-bootstrap/issues/84)  |&#x2610; Detecting production mode
-
-### TODOS
-
-Review existing pull requests against plusjake/jekyll-bootstrap:master. Merge or close each.
-
-* Create twitter account. Add link / icon on jekyllbootstrap.com.
-* Create blog posts under plusjade/gh-pages, expose on jekyllbootstrap.com, feed to twitter account.
-* Announce state of project, announce roadmap(s), announce new versions as they’re released.
-
-## Contributing
-
-
-To contribute to the framework please make sure to checkout your branch based on `jb-development`!!
-This is very important as it allows me to accept your pull request without having to publish a public version release.
-
-Small, atomic Features, bugs, etc.
-Use the `jb-development` branch but note it will likely change fast as pull requests are accepted.
-Please rebase as often as possible when working.
-Work on small, atomic features/bugs to avoid upstream commits affecting/breaking your development work.
-
-For Big Features or major API extensions/edits:
-This is the one case where I'll accept pull-requests based off the master branch.
-This allows you to work in isolation but it means I'll have to manually merge your work into the next public release.
-Translation : it might take a bit longer so please be patient! (but sincerely thank you).
-
-**Jekyll-Bootstrap Documentation Website.**
-
-The documentation website at <http://jekyllbootstrap.com> is maintained at https://github.com/plusjade/jekyllbootstrap.com
-
-
-## License
-
-[MIT](http://opensource.org/licenses/MIT)
+- 2017-03-27: In author sidebar, link for Google Scholar displays site URL instead of Google Scholar URL in _config.yml. [Issue #6](https://github.com/academicpages/academicpages.github.io/issues/6), fixed in [34bg699](https://github.com/academicpages/academicpages.github.io/commit/34bd6990aa335c40cdadc01b5561797860d5eaa6)
